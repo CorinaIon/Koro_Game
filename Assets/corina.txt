@@ -6,14 +6,12 @@
  optiunea de a dat sens_mouse invers
 
 
-
-
 #URAT
 - Nu imi place cand dau click pe piatra si se duce in spatele ei
 - pe masca nu pot da click sa o dezechipez.
 
 #TODO
--ar fi frumos sa aia un streak cu cati ai salvat fara sa fie ranit sau ceva..
+- ar fi frumos sa aiba un streak cu cati ai salvat fara sa fie ranit sau ceva..
 - arma sa nu aiba prefab vechi.
 - sa pun singleton-ul player peste tot pe unde mai am public Player_script player/ul;
 - daca vreau sa fie mega perfectionista (nu nu), pot sa ma uit ce variabile/functii pot fi private/protected in loc de public. ca viata in Stats_script yk. 
@@ -22,15 +20,15 @@
 - la final face animatii random pentru sabia lui: https://www.youtube.com/watch?v=yhPRkihs-Yg&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=13
 Eu aveam animatii diferite pentru pacientii bolnavi. sa le pun si eu.
 - sa se umple bara treptat la AdaugaViata(50)
-- o saa hardcodez inaltimea drop-ului. fa tu normal
+- o sa hardcodez inaltimea drop-ului. fa tu normal
 - cand face animatia de hurt sa nu se mai deplaseze, sau sa fie doar la maini animatia.
 - npc_O_S si koro au mult cod comun si un parinte comun he he >:)
 - #HC pentru hardcodat. Asta inseamna si ori de cate ori am "Potiune vindecatoare", dar marog..
 - sa capete viata cu masca si sa fie cum a zis daniela
 - sa nu mai pluteasca obieectele la drop pentru ca stau intr-un colt.
 - sa nu mai verifice intr-una de mesaj..
--heal si dodamag_pjv aucod care se repeta
--in inventar sa fie grupate.
+- heal si dodamag_pjv aucod care se repeta
+- in inventar sa fie grupate.
 - targets_manager ar putea sa fie tot gameManager
 - koro ar putea sa fi mici la inceput si apoi sa se nasca.
 - //+++sound pentru locurile unde trebuie pus sonorul special. Koro am rezolvat vv E la awaake.
@@ -44,11 +42,11 @@ Eu aveam animatii diferite pentru pacientii bolnavi. sa le pun si eu.
 - sa nu mai colecteze ciupercile de 2 ori din inventar
 - sa se actualzeze Open Quest-ul instant. 1/3
 - sa ii adauge pe koro in group nu in Ierarhie direct
--a decis brusc in koro_O_s sa verifice si a doua conditie dintr-un if in care prima e falsee..
+- a decis brusc in koro_O_s sa verifice si a doua conditie dintr-un if in care prima e falsee..
 - s-a blocat playerul si nu il mai puteam misca..
 - ca sa fac animatie Dance la final trebuie sa am un quest sau nu cu descoperirea zombie-ilor la un click pe unul.
 - fereastra cu accept quest sa apara doar dupa ce a dat click pe close
--dupa o lupta cu oponentul sau in spatele copacului cand am dat click pe koro/copac s-a blocat
+- dupa o lupta cu oponentul sau in spatele copacului cand am dat click pe koro/copac s-a blocat
 - idk ce are arma din spatele copacului
 - sa cauat o alta cale pentru transform in locde forward right up
  - cand revine la  viata sa  fie tot negru/bronzat/alb
@@ -58,7 +56,7 @@ Eu aveam animatii diferite pentru pacientii bolnavi. sa le pun si eu.
 - isInteracting sa am grija cum e setata pentru npc cazut
 - ordinea PROTECTED OVERRIDE nu invers sau whatever.
 - sa ii arat danielei animatia koro, trebuie neaparat sa confirme
-= sa verific daca ar mai fi facut update-ul daca nu puneam deloc base.update();
+- sa verific daca ar mai fi facut update-ul daca nu puneam deloc base.update();
 - arma din stanga inca are probleme
 - dispare arma dar nu o pune in inventar cand dau click click repede de pe un ob pe altul.
 - sa ii dau un StopAllCoroutines cand e mort de tot
@@ -69,7 +67,7 @@ Eu aveam animatii diferite pentru pacientii bolnavi. sa le pun si eu.
 - la este masa libera ar trebui sa i-o dea pe cea mai apropiata de player..
 - StopAllCoroutines din DialogManager... nu are efect si in exterior, nu? nu??
 - aparent yield return 0 asteapta doar un frame :)))))) morrr, nu mai modific nimic.. 
-- de pus yield return break unde era yild return 0
+- de pus yield return break unde era yield return 0
 
 
 #QUESTIONS
