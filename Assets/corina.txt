@@ -1,0 +1,168 @@
+
+ Taste:
+ LEFT_RIGHT PENTRU CAMERA
+ MOUSE PENTRU CAMERA
+
+ optiunea de a dat sens_mouse invers
+
+
+
+
+#URAT
+- Nu imi place cand dau click pe piatra si se duce in spatele ei
+- pe masca nu pot da click sa o dezechipez.
+
+#TODO
+-ar fi frumos sa aia un streak cu cati ai salvat fara sa fie ranit sau ceva..
+- arma sa nu aiba prefab vechi.
+- sa pun singleton-ul player peste tot pe unde mai am public Player_script player/ul;
+- daca vreau sa fie mega perfectionista (nu nu), pot sa ma uit ce variabile/functii pot fi private/protected in loc de public. ca viata in Stats_script yk. 
+- sa debifex auto-Lighting ca sa nu fie scena urata cand da reload.
+- mai nou animatorul e public la player. Sa fac mai simplu, nu getcomponent in Echipare_manager de exemplu.
+- la final face animatii random pentru sabia lui: https://www.youtube.com/watch?v=yhPRkihs-Yg&list=PLPV2KyIb3jR4KLGCCAciWQ5qHudKtYeP7&index=13
+Eu aveam animatii diferite pentru pacientii bolnavi. sa le pun si eu.
+- sa se umple bara treptat la AdaugaViata(50)
+- o saa hardcodez inaltimea drop-ului. fa tu normal
+- cand face animatia de hurt sa nu se mai deplaseze, sau sa fie doar la maini animatia.
+- npc_O_S si koro au mult cod comun si un parinte comun he he >:)
+- #HC pentru hardcodat. Asta inseamna si ori de cate ori am "Potiune vindecatoare", dar marog..
+- sa capete viata cu masca si sa fie cum a zis daniela
+- sa nu mai pluteasca obieectele la drop pentru ca stau intr-un colt.
+- sa nu mai verifice intr-una de mesaj..
+-heal si dodamag_pjv aucod care se repeta
+-in inventar sa fie grupate.
+- targets_manager ar putea sa fie tot gameManager
+- koro ar putea sa fi mici la inceput si apoi sa se nasca.
+- //+++sound pentru locurile unde trebuie pus sonorul special. Koro am rezolvat vv E la awaake.
+- ctrl F "!!!!
+- pot fi doar 4 questuri vizibile
+- ar treebui o coada de notificari, nu doar una.
+- ar trebui adaugat mai tarziu playerul in coada de targets,dar tot pe pozitia 0 cu prioritate
+- sa tin altfel cont de queseturile lansate, nu cu bool-uri.. level era binisor.s
+- si parte cu Find din items_pickup e enervanta,,
+- am facut agentul playerului public, nu mai e nevoie de getC undeva..
+- sa nu mai colecteze ciupercile de 2 ori din inventar
+- sa se actualzeze Open Quest-ul instant. 1/3
+- sa ii adauge pe koro in group nu in Ierarhie direct
+-a decis brusc in koro_O_s sa verifice si a doua conditie dintr-un if in care prima e falsee..
+- s-a blocat playerul si nu il mai puteam misca..
+- ca sa fac animatie Dance la final trebuie sa am un quest sau nu cu descoperirea zombie-ilor la un click pe unul.
+- fereastra cu accept quest sa apara doar dupa ce a dat click pe close
+-dupa o lupta cu oponentul sau in spatele copacului cand am dat click pe koro/copac s-a blocat
+- idk ce are arma din spatele copacului
+- sa cauat o alta cale pentru transform in locde forward right up
+ - cand revine la  viata sa  fie tot negru/bronzat/alb
+  - yield breaak nu yield return 0 whyyy
+-  //!!!Sa instantiez o potiune in mana lui NPC. si sa pun delay-uri!!!!!!!!!!!!!!!
+- i-a dat de mai multe ori viata in tarc....
+- isInteracting sa am grija cum e setata pentru npc cazut
+- ordinea PROTECTED OVERRIDE nu invers sau whatever.
+- sa ii arat danielei animatia koro, trebuie neaparat sa confirme
+= sa verific daca ar mai fi facut update-ul daca nu puneam deloc base.update();
+- arma din stanga inca are probleme
+- dispare arma dar nu o pune in inventar cand dau click click repede de pe un ob pe altul.
+- sa ii dau un StopAllCoroutines cand e mort de tot
+- la OpresteAgentulcandIaDAmage nu ar trebuie saa faca isInteracting false i n cazul in care era deja.. Nu cred ca e bine ca se apeleaza la fiecare x secunde pentru micul damag 1. ar trebui aia cu >=2 si aici. if(>=2) Opreste., nu direct apel
+- din caauza lui OpACID se opreste frumos, nu pentru ca schimba directia, eh.. 
+- setari redundante cand face RevineNPClaViata desi doar il vindeca, nu era in tarc neaparat in functia AdaugaViata().
+- am pus un 40 + angle la ala cu NU AR TREBUI SA FIE O PROBLEMA, quick fix srryy not srrryy
+- la este masa libera ar trebui sa i-o dea pe cea mai apropiata de player..
+- StopAllCoroutines din DialogManager... nu are efect si in exterior, nu? nu??
+- aparent yield return 0 asteapta doar un frame :)))))) morrr, nu mai modific nimic.. 
+- de pus yield return break unde era yild return 0
+
+
+#QUESTIONS
+- kinematic sau nu? Nu era kinematic rigidbody-ul de pe capsula, dar cand i-am pus pelerina [ik ik :)))] mi-a dat o eroare
+	/*
+	Non-convex MeshCollider with non-kinematic Rigidbody is no longer supported since Unity 5.
+	If you want to use a non-convex mesh either make the Rigidbody kinematic or remove the Rigidbody component. Scene hierarchy path "empty_obj_cu_kinematic/capsule_irva/Plane", Mesh asset path "Library/unity default resources" Mesh name "Plane"
+	*/
+- Am pus un FIndObjectOfType in Awake, oare ce unde se punea??
+- In ep10, el a facut o clasaa Player_manager cu un singleton pentru player si un public transform care e al pleyerului cu d&d. De ce nu a facut asta direct in clasa Player? TODO. Sa ma uit la videoclipul lui cu singleton
+- ammmm, hehe, care era faza cu functiile virtuale? care e diferenta intre public virtual void si public void OnDrawGizmosS scrisa in clasa obieect_script atunci cand in Koro_script am functia cu acelasi nume si paramtri. I-am pus un base.OnDGS.
+- la click stanga intra prin obiecte. Oare ce facea daca apasam pe static?? (nu ar mai merge pe sub el, nu?) Sa le pun rigidbody +-kinematic? sau ceva din navmesh?
+Mda, din ce am observat, nu trebuie sa ii pun kinematic. Daca e doar rigidbody Use Gravity merge. + collider. fara static. dar clickable.
+-//while (FacePlayer()) ; for some reason linia asta care e mereu true blocheaza Unity, ok :))
+- mai e vreo situatie inafara de modificarea publicelor din Inspector cand mi se modifica valoarea variabilelor dintr-o clasa dupa Start?
+- start ul din functia baza nu se face??
+- ce naiba au butoanele alea care nu mergeauu
+-private/default/protected
+
+
+#SOLVED
+-Look rotation viewing vector is zero
+    UnityEngine.Quaternion:LookRotation (UnityEngine.Vector3) --> nu e voie sa dai LookRotation(vec3(0,0,0)) deci.
+    Player_script:FaceTarget () (at Assets/scripts/Player_script.cs:136)
+    Player_script/<FollowTarget>d__13:MoveNext () (at Assets/scripts/Player_script.cs:111)
+    Apare cand dau click pe un obiect si am prea multe in inventar. Se duce in el, apoi se roteste aiurea.. in fata lui.
+    De faaapt, aparea pentru ca aveam Raza_pick prea mica. am pus 1.5 in loc de 1. (aparea desi aveam spatiu in inventar)
+    De faaaaapt aparea pentru ca era fix pe target, dar y era 1 normalizat si xz erau 0, asa ca ii dadeam eu x0z adica 0
+- Nu se vede deloc cand face tine_arma true cand apas pe capslock. 
+	Raspuns: Trebuia sa dau click pe obiectul "doctor", nu pe GameObjectul parinte. Se coloreaza cu albastru in animator corect acum.
+- Se miscau si picioarele aiurea (incet, pe loc, desi trebuia sa alerge)  atunci cand avea arma in mana. Era de la Avatar Mask. Nu merge cu cel basic Humanoid, a trebuit sa ii pun skeleton. Nici daca character e ste humanoid, ncii generic, nu merge. trebuie skeleton.
+- multe dar am uitat sa scriu. Cea mai interesanta era cu materialul care nu este <Material> de fapt. Si unitatea de masura e 1.0f ca la ppbg parca.
+- E foarte lenta animatia cu rifleidle. DUreaza mult pana face tranzitia. sa ii dau dbifat la exit time pe tranz sens dus. solved. dar apoi tragea in timp ce facea face target, eh..
+- chiar face animatiile Overeride zombie-ul, fantastic.
+
+#OBS
+- cand ii dau Reset transform-ului ala cu RemoveButton see face din Recct Tranaform left right bottom etc in left.. width height. yay
+- Ca sa nu mai fie blurata: Sprite are None si Bilinear, poza are 128 putere a lui 2, transform rect. are width 128 height 128 scale 1 1 1
+- Nu am mai facut la 7:14 E05 partea cu Icon Image - None si apoi disable Image. Am pus epty_slot.png
+- Sa am grija sa dau unpack completly atunci cand fac un prefab . (in unele cazuri, de exemplu atunci cand aveam GamObj>prefab copil. si am facut la toata asta un prefab (din GameObj adica), cand am sters prefabul din care era facut copilul, a devenit si noul prefab defect.)
+- Incercasem sa fac totul intr-un script Koro_script derivat din Obiect_script. Dar nu ar merge. Chiar daca in update i-as pune base.update(). Pentru ca in base ar apela functia Interactioneaza() din clasa Obiect, nu din Koro. Nu vede functia ovveride din Koro cu numele Interactioneaza.. eh.. 
+Obiect_script //am derivat din Obiect_script pentru ca playerul s a poata interactiona cu el. Am acolo functia care va fi suprascrisa Interactioneaza() si mai aveeam si:variabila razaPick pentru player si functiile OnDrawGizmosS, functii pentru Focus/Defocus player pe obiect, 
+base.OnDrawGizmosSelected();
+base.Update(); // aici se verifica daca playerul a focusat obiectul si s-a apropiat destul si apoi se apela functia Interactioneaza()
+base.Interactioneaza();
+public override void Interactioneaza()
+    {
+        Debug.Log("interactioneaza din clasa Koro");
+    }
+- functciile treebuiesa fie public a sa le poata vedea din OnClick butoanele
+- "SetDestination" can only be called on an active agent that has been placed on a NavMesh.
+//Debug.Log(" --name: " + p.obiect_pt_ATAC.GetComponentInChildren<ItemPickup_script>().name + " --item: " + p.obiect_pt_ATAC.GetComponentInChildren<ItemPickup_script>().item + " --item name: " + p.obiect_pt_ATAC.GetComponentInChildren<ItemPickup_script>().item.name);
+            // --name: Weapon_Launcher --item: Echip_range (Echipament_script) --item name: Launcher
+            //--name: FLAKON05_mana_modified_by_MeMeMee (2) --item: Echip_Potiune (Echipament_script) --item name: Potiune vindecatoare
+
+
+
+CTRL K U - decomenteaza bloc
+
+
+
+
+//eram mandra de functia asta, dar de fapt doar playerul poate manca obiecte... 
+    public enum UsedBy { PLAYER_INVENTAR, NPC }
+    public override void Use(UsedBy utilizator)
+    {
+        base.Use(utilizator);
+        //adaugam viata
+        if(utilizator == UsedBy.PLAYER_INVENTAR)
+        {
+            Player_script.instanta.AdaugaViata(yamm);
+        }
+        else //este UsedBy.NPC
+        {
+            Debug.Log("npc ul l-a mancat");
+        }
+        //sterg din inventar
+        RemoveFromInventory();
+    }
+}
+
+
+
+public event System.Action OnAttack
+if(OnAttack!=null)OnAttack(); la finalul functiei de attack() din combat.cs aka koro_obj_script la mine.
+
+quiz eu
+-- Iti va instantia un obiect nou, clona, uimitor
+if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Collider c = GetComponent<SphereCollider>();
+            Instantiate(c);
+        }
+--Destroy(this) sterge scriptul, Destroy(this.gameObject) sterge Go si this.transform nu e permis.
+
+        target.rotation = rot * Quaternion.Euler(0,180,0);

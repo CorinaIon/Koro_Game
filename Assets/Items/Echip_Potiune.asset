@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce42339d91fd7a54b831be2c48e7c2e3, type: 3}
+  m_Name: Echip_Potiune
+  m_EditorClassIdentifier: 
+  name: Potiune vindecatoare
+  imagine: {fileID: 21300000, guid: a2c90e4ad5d20b845bb2c635bedd7d3c, type: 3}
+  prefab_drop: {fileID: 1631355537248439682, guid: 41b5fd92135f78847a5264381a926567, type: 3}
+  height_drop: {x: 0, y: 1.03, z: 0}
+  damage: 20
+  tip: 0
+  prefabul: {fileID: 165339498563064802, guid: 5ea6ca6581493204faefe7282f1fd53e, type: 3}

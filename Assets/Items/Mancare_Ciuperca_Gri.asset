@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf4fa804b4f57446a44453300d72687, type: 3}
+  m_Name: Mancare_Ciuperca_Gri
+  m_EditorClassIdentifier: 
+  name: Ciuperca Gri
+  imagine: {fileID: 21300000, guid: 9bb52834f32c9fd4e85256e38c5ee312, type: 3}
+  prefab_drop: {fileID: 2844081647479328007, guid: 0b27611da9bced04cbdb60d2cbb3511f, type: 3}
+  height_drop: {x: 0, y: 1.05, z: 0}
+  yamm: 5
+  tip: 1
