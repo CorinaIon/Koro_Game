@@ -87,7 +87,6 @@ public class GameManager_script : MonoBehaviour
         //+++sound
     }
 
-
     public void Generare_NPCs_si_1koro()
     {
         NPC_parinte.SetActive(true);
